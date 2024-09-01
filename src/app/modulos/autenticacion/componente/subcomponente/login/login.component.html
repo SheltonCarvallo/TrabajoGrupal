@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-center mt-3">
+    <form action="" autocomplete="off">
+        <div>
+            <div class="display-6">
+                {{labelLogin}}   
+            </div>
+            <br>
+            <div>
+                <!-- area de usuario -->
+                 <div>
+                    <div>
+                        <label for="emailUsuario">Usuario</label>
+                     </div>
+                     <div>
+                        <input [(ngModel)]="emailUsuario" type="email" name="emailUsuario" id="emailUsuarioID" placeholder="Ingrese su Email">
+                     </div>
+                     <div>
+                        <label for="contraseniapassword">Contrase&ntilde;a</label>
+                    </div>
+                    <div>
+                        <input [(ngModel)]="passWordUsuario" type="password" name="contraseniapassword" id="contraseniapasswordID" placeholder="password">
+                    </div> 
+                 </div>
+            </div>
+            <br>
+            <div>
+                <div>
+                    <div class="bi bi-airplane">
+                        <input class="btn btn-primary m-2" type="button" value="Iniciar Sesi&oacute;n" (click)="login()">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
