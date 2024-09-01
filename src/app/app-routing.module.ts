@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: 'persona',
     loadChildren:() => import('./modulos/persona/persona.module').then(m => m.PersonaModule)
   }
-
+  
 ];
 
 @NgModule({

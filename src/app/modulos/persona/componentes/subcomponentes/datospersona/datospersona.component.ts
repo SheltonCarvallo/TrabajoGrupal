@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { lPersona } from '../../../../../Interfaz/persona.interfaz';
+import { personas } from '../../../../../dataejemplo/datapersona';
 
 @Component({
   selector: 'app-datospersona',
@@ -7,6 +9,8 @@ import { NgForm } from '@angular/forms';
   styles: ``
 })
 export class DatospersonaComponent {
+
+  datosPersona: lPersona[]= personas;
 
   @ViewChild(NgForm, {static: false}) formDatosPersonales!: NgForm;
 

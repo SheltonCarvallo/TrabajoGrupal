@@ -1,68 +1,27 @@
 
-<form #formDatosPersonales="ngForm"  (ngSubmit)="guardarDatosPersonales()" action="">
-    <div>
-        <div>
-            <div class="row">
-                <div class="col">
-                    <div>
-                        <label for="nombreUsuarioID">Nombre</label>
-                    </div>
-                    <div>
-                        <input class="form-control" [(ngModel)]="primer_Nombre" #primerNombre="ngModel" required="true" [pattern]="'[a-zA-Z ]{2,254}'" type="text" name="nombreUsuario" id="nombreUsuarioID"
-                            placeholder="Ingrese su primere nombre">
-                            <div [hidden]="primerNombre.valid || primerNombre.pristine" class="alert alert-danger"> CAMPO INVALIDO </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div>
-                        <label for="apellidoUsuarioID">Apellido</label>
-                    </div>
-                    <div>
-                        <input class="form-control" type="text" name="apellidoUsuario" id="apellidoUsuarioID"
-                        placeholder="Ingrese su apellido">
-                    </div>
-                </div>
-                <div class="col">
-                    <div>
-                        <label for="edadID">Edad</label>
-                    </div>
-                    <div>
-                        <input class="form-control" type="text" name="edad" id="edadID"
-                            placeholder="Ingrese su Edad">
-                    </div>
-                </div>
-                <div class="col">
-                    <div>
-                        <label for="identificacionID">Identificaci&oacute;n</label>
-                    </div>
-                    <div>
-                        <input class="form-control" type="text" name="identificacion"
-                            id="identificacionID" placeholder="Ingrese su Identificaci&oacute;n">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="col">
-                        <label for="CelulularID">Celular</label>
-                    </div>
-                    <div>
-                        <input class="form-control" type="text" name="Celulular" id="CelulularID"
-                            placeholder="Ingrese su numero de celular">
-                    </div>
-                </div>
-                <div class="col">
-                    <div>
-                        <label for="Correo">Correo</label>
-                    </div>
-                    <div>
-                        <input class="form-control" type="email" name="Correo" id="CorreoID"
-                            placeholder="Ingrese su correo">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
+<div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Identificaci&oacute;n</th>
+            <th scope="col">Celular</th>
+            <th scope="col">Correo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let persons of datosPersona " >
+            <td>{{ persons.id }}</td>
+            <td>{{ persons.nombre }}</td>
+            <td>{{ persons.apellido }}</td>
+            <td>{{ persons.edad }}</td>
+            <td>{{ persons.numeroIdentificacion }}</td>
+            <td>{{ persons.numeroCelular }}</td>
+            <td>{{ persons.correo }}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

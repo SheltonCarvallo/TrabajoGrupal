@@ -28,11 +28,13 @@ export class ComponenteComponent {
             this.router.navigate(['/persona'])
         }
         else{
-          window.alert("Contraseña incorrecta");
+          this.mostrarMensajeError("Contraseña incorrecta");
+          // window.alert("Contraseña incorrecta");
         }
       }
       else{
-        window.alert("Usuario Incorrecto");
+        this.mostrarMensajeError("Usuario Incorrecto");
+        // window.alert("Usuario Incorrecto");
       }
   }
   
@@ -40,4 +42,34 @@ export class ComponenteComponent {
     console.log(dataCambio);
     this.pantallaPresentacion = dataCambio;
   }
+
+  mostrarMensajeError(message: string) {
+    this.mostrarMensajeBase(message, 'danger');
+  }
+
+  mostrarMensajeExito(message: string) {
+    this.mostrarMensajeBase(message, 'success');
+  }
+
+  mostrarMensajeAlerta(message: string) {
+    this.mostrarMensajeBase(message, 'warn');
+  }
+
+  mostrarMensajeBase(message: string, type: string) {
+    const alertPlaceholder = document.getElementById('divMensaje')
+    const appendAlert = () => {
+      const wrapper = document.createElement('div')
+      wrapper.innerHTML = [
+        `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>'
+      ].join('')
+
+      alertPlaceholder?.appendChild(wrapper)
+    }
+    appendAlert()
+  }
 }
+
+

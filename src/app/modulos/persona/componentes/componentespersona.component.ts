@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { DatospersonaComponent } from './subcomponentes/datospersona/datospersona.component';
+import { lPersona } from '../../../Interfaz/persona.interfaz';
+import { personas } from '../../../dataejemplo/datapersona';
 
 @Component({
   selector: 'app-componentes',
@@ -13,5 +15,9 @@ export class ComponentesPersonaComponent {
 
   mantenimientoUsuario(){
     this.datosPersonaComponent.guardarDatosPersonales();
+  }
+
+  guardarPersona(persona: lPersona) {
+    personas.push(persona);
   }
 }

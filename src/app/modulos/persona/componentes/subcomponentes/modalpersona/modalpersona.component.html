@@ -1,0 +1,45 @@
+<button type="button" class="btn btn-success m-2" data-bs-toggle="modal" [attr.data-bs-target]="'#'+modalid">Agregar</button>
+
+<div class="modal fade" id="{{modalid}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Persona</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div id="divMensaje"></div>
+      <div class="modal-body">
+        <form method="post">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Nombre:</label>
+            <input type="text" name="recipient-name" [(ngModel)]="dataPersona.nombre" class="form-control" id="recipient-name" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-lastname" class="col-form-label">Apellido:</label>
+            <input name="recipient-lastname" type="text" [(ngModel)]="dataPersona.apellido"  class="form-control" id="recipient-lastname" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-birthdate" class="col-form-label">Edad</label>
+            <input name="recipient-birthdate" type="text" [(ngModel)]="dataPersona.edad" class="form-control" id="recipient-birthdate" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-genre" class="col-form-label">Identificaci&oacute;n</label>
+            <input name="recipient-genre" type="text" [(ngModel)]="dataPersona.numeroIdentificacion" class="form-control" id="recipient-genre" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-phone" class="col-form-label">Celular</label>
+            <input name="recipient-phone" type="text" [(ngModel)]="dataPersona.numeroCelular" class="form-control" id="recipient-phone" required>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-city" class="col-form-label">Correo</label>
+            <input name="recipient-city" type="email" [(ngModel)]="dataPersona.correo" class="form-control" id="recipient-city" required>
+          </div>
+          <div class="modal-footer">
+            <input type="button" id="btnCerrarModal" class="btn btn-secondary" value="Cerrar" data-bs-dismiss="modal">
+            <input type="button" id="btnGuardar" class="btn btn-primary" value="Guardar" (click)="guardar()">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
