@@ -16,6 +16,7 @@ Pantalla de ingreso:
 <img src="src/assets/image.png">
 <br>
 Validacion de Login con Bootstrap y navegador
+<br>
 <img src="src/assets/validacionconboots.png">
 <br>
 <img src="src/assets/Validacionlogin.png">
@@ -27,10 +28,12 @@ Pantalla de lista de personas:
 <br>
 
 ## Agregar Personas
-Modal para Aagregar personas:
+Modal para Agregar personas:
+<br>
 <img src="src/assets/modalperso.png">
 <br>
 Validacion al agregar:
+<br>
 <img src="src/assets/validacionpers.png">
 <br>
 Se Agrega la persona y tambien se valida al momento si no ingresa el telefono o celular:
